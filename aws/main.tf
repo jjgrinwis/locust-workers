@@ -47,7 +47,6 @@ resource "aws_instance" "ubuntu_eu_west_1" {
   instance_type               = "t2.micro"
   user_data                   = templatefile("../cloud-config.tpl", { master = var.master })
   user_data_replace_on_change = true
-  key_name                    = "ec2"
 
   tags = {
     Name = "aws-locust-${count.index}-eu_west_1"
@@ -61,6 +60,7 @@ resource "aws_instance" "ubuntu_eu_central_1" {
   instance_type               = "t2.micro"
   user_data                   = templatefile("../cloud-config.tpl", { master = var.master })
   user_data_replace_on_change = true
+  key_name                    = "ec2"
 
   tags = {
     Name = "aws-locust-${count.index}-ubuntu_eu_central_1"
