@@ -13,3 +13,9 @@ variable "root_password" {
   type        = string
   sensitive   = true
 }
+
+variable "number_of_instances" {
+  description = "How many instances to boot in this cloud provider"
+  type        = number
+  default     = 3
+}
