@@ -8,6 +8,12 @@ variable "master" {
   type        = string
 }
 
+variable "root_password" {
+  description = "root password defined in CF cloud (not using it)"
+  type        = string
+  sensitive   = true
+}
+
 variable "number_of_instances" {
   description = "How many instances to boot in this cloud provider"
   type        = number
