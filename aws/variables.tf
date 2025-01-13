@@ -18,3 +18,9 @@ variable "master" {
   description = "The IP address of our master locust node"
   type        = string
 }
+
+variable "root_password" {
+  description = "root password defined for cloud (not using it)"
+  type        = string
+  sensitive   = true
+}
