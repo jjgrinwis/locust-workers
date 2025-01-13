@@ -21,11 +21,11 @@ resource "random_shuffle" "linode_regions" {
 
 resource "linode_instance" "web" {
   count       = 3
-  label       = "tf_created_instance-${count.index}"
+  label       = "linode-locust-${count.index}-${random_shuffle.linode_regions.result[count.index]}"
   image       = "linode/ubuntu24.04"
   region      = random_shuffle.linode_regions.result[count.index]
   type        = "g6-nanode-1"
-  root_pass   = "this-is-not-a-safe-password"
+  root_pass   = var.root_password
   firewall_id = 910692
 
   metadata {
