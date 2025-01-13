@@ -1,4 +1,4 @@
-variable "token" {
+variable "linode_token" {
   description = "The Linode API token to use"
   type        = string
 }

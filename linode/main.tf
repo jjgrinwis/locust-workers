@@ -1,7 +1,7 @@
 # Linode API token stored in env var VAR_TF_token
-# export TF_VAR_token="25xxx"
+# export TF_VAR_linode_token="25xxx"
 provider "linode" {
-  token = var.token
+  token = var.linode_token
 }
 
 # using random 
