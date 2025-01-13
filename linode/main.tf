@@ -20,7 +20,7 @@ resource "random_shuffle" "linode_regions" {
 }
 
 resource "linode_instance" "web" {
-  count       = 3
+  count       = var.number_of_instances
   label       = "linode-locust-${count.index}-${random_shuffle.linode_regions.result[count.index]}"
   image       = "linode/ubuntu24.04"
   region      = random_shuffle.linode_regions.result[count.index]
